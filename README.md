@@ -316,173 +316,173 @@
         </div>
     </div>
     <script>
-        // DOM Elements
-        const originalPriceInput = document.getElementById('originalPrice');
-        const discountPercentInput = document.getElementById('discountPercent');
-        const finalPriceInput = document.getElementById('finalPrice');
-        // Result elements
-        const discountedPriceElement = document.getElementById('discountedPrice');
-        const savingsAmountElement = document.getElementById('savingsAmount');
-        const effectiveDiscountElement = document.getElementById('effectiveDiscount');
-        // Visual elements
-        const originalBar = document.getElementById('originalBar');
-        const discountedBar = document.getElementById('discountedBar');
-        // Savings elements
-        const monthlySavingsElement = document.getElementById('monthlySavings');
-        const yearlySavingsElement = document.getElementById('yearlySavings');
-        const pricePerUnitElement = document.getElementById('pricePerUnit');
-        // Table element
-        const discountTableBody = document.getElementById('discountTableBody');
-        // Event listeners for auto-calculation
-        [originalPriceInput, discountPercentInput, finalPriceInput].forEach(input => {
-            input.addEventListener('input', calculateDiscount);
-        });
-        // Initial calculation
-        calculateDiscount();
-        // Main calculation function
-        function calculateDiscount() {
-            const originalPrice = parseFloat(originalPriceInput.value);
-            const discountPercent = parseFloat(discountPercentInput.value);
-            const finalPrice = parseFloat(finalPriceInput.value);
-            if (originalPrice) {
-                // Calculate based on what inputs are provided
-                if (!isNaN(discountPercent) {
-                    // Calculate from original price and discount percent
-                    const discountDecimal = discountPercent / 100;
-                    const savings = originalPrice * discountDecimal;
-                    const discountedPrice = originalPrice - savings;
-                    // Display results
-                    discountedPriceElement.textContent = formatCurrency(discountedPrice);
-                    savingsAmountElement.textContent = formatCurrency(savings);
-                    effectiveDiscountElement.textContent = `${discountPercent}%`;
-                    // Update visual comparison
-                    updateVisualComparison(originalPrice, discountedPrice);
-                    // Calculate additional savings
-                    calculateAdditionalSavings(savings);
-                    // Generate discount table
-                    generateDiscountTable(originalPrice);
-                } else if (!isNaN(finalPrice) {
-                    // Calculate discount percent from final price
-                    const savings = originalPrice - finalPrice;
-                    const discountPercentCalculated = (savings / originalPrice) * 100;
-                    // Display results
-                    discountedPriceElement.textContent = formatCurrency(finalPrice);
-                    savingsAmountElement.textContent = formatCurrency(savings);
-                    effectiveDiscountElement.textContent = `${discountPercentCalculated.toFixed(2)}%`;
-                    // Update visual comparison
-                    updateVisualComparison(originalPrice, finalPrice);
-                    // Calculate additional savings
-                    calculateAdditionalSavings(savings);
-                    // Generate discount table
-                    generateDiscountTable(originalPrice);
-                } else {
-                    // Only original price entered
-                    discountedPriceElement.textContent = '--';
-                    savingsAmountElement.textContent = '--';
-                    effectiveDiscountElement.textContent = '--';
-                    // Reset visual comparison
-                    originalBar.style.height = '100%';
-                    discountedBar.style.height = '100%';
-                    originalBar.querySelector('.poc-visual-percent').textContent = '100%';
-                    discountedBar.querySelector('.poc-visual-percent').textContent = '0%';
-                    // Generate discount table
-                    generateDiscountTable(originalPrice);
-                }
-            } else {
-                // No original price entered
-                discountedPriceElement.textContent = '--';
-                savingsAmountElement.textContent = '--';
-                effectiveDiscountElement.textContent = '--';
-                // Reset visual comparison
-                originalBar.style.height = '100%';
-                discountedBar.style.height = '100%';
-                originalBar.querySelector('.poc-visual-percent').textContent = '100%';
-                discountedBar.querySelector('.poc-visual-percent').textContent = '0%';
-                // Clear additional savings
-                monthlySavingsElement.textContent = '--';
-                yearlySavingsElement.textContent = '--';
-                pricePerUnitElement.textContent = '--';
-                // Clear discount table
-                discountTableBody.innerHTML = '';
-            }
-        }
-        // Update the visual comparison bars
-        function updateVisualComparison(originalPrice, discountedPrice) {
-            const discountPercent = ((originalPrice - discountedPrice) / originalPrice) * 100;
-            const discountedPercent = 100 - discountPercent;
+     // DOM Elements
+const originalPriceInput = document.getElementById('originalPrice');
+const discountPercentInput = document.getElementById('discountPercent');
+const finalPriceInput = document.getElementById('finalPrice');
+// Result elements
+const discountedPriceElement = document.getElementById('discountedPrice');
+const savingsAmountElement = document.getElementById('savingsAmount');
+const effectiveDiscountElement = document.getElementById('effectiveDiscount');
+// Visual elements
+const originalBar = document.getElementById('originalBar');
+const discountedBar = document.getElementById('discountedBar');
+// Savings elements
+const monthlySavingsElement = document.getElementById('monthlySavings');
+const yearlySavingsElement = document.getElementById('yearlySavings');
+const pricePerUnitElement = document.getElementById('pricePerUnit');
+// Table element
+const discountTableBody = document.getElementById('discountTableBody');
+// Event listeners for auto-calculation
+[originalPriceInput, discountPercentInput, finalPriceInput].forEach(input => {
+    input.addEventListener('input', calculateDiscount);
+});
+// Initial calculation
+calculateDiscount();
+// Main calculation function
+function calculateDiscount() {
+    const originalPrice = parseFloat(originalPriceInput.value);
+    const discountPercent = parseFloat(discountPercentInput.value);
+    const finalPrice = parseFloat(finalPriceInput.value);
+    if (originalPrice) {
+        // Calculate based on what inputs are provided
+        if (!isNaN(discountPercent)) {
+            // Calculate from original price and discount percent
+            const discountDecimal = discountPercent / 100;
+            const savings = originalPrice * discountDecimal;
+            const discountedPrice = originalPrice - savings;
+            // Display results
+            discountedPriceElement.textContent = formatCurrency(discountedPrice);
+            savingsAmountElement.textContent = formatCurrency(savings);
+            effectiveDiscountElement.textContent = `${discountPercent}%`;
+            // Update visual comparison
+            updateVisualComparison(originalPrice, discountedPrice);
+            // Calculate additional savings
+            calculateAdditionalSavings(savings);
+            // Generate discount table
+            generateDiscountTable(originalPrice);
+        } else if (!isNaN(finalPrice)) {
+            // Calculate discount percent from final price
+            const savings = originalPrice - finalPrice;
+            const discountPercentCalculated = (savings / originalPrice) * 100;
+            // Display results
+            discountedPriceElement.textContent = formatCurrency(finalPrice);
+            savingsAmountElement.textContent = formatCurrency(savings);
+            effectiveDiscountElement.textContent = `${discountPercentCalculated.toFixed(2)}%`;
+            // Update visual comparison
+            updateVisualComparison(originalPrice, finalPrice);
+            // Calculate additional savings
+            calculateAdditionalSavings(savings);
+            // Generate discount table
+            generateDiscountTable(originalPrice);
+        } else {
+            // Only original price entered
+            discountedPriceElement.textContent = '--';
+            savingsAmountElement.textContent = '--';
+            effectiveDiscountElement.textContent = '--';
+            // Reset visual comparison
             originalBar.style.height = '100%';
-            discountedBar.style.height = `${discountedPercent}%`;
+            discountedBar.style.height = '100%';
             originalBar.querySelector('.poc-visual-percent').textContent = '100%';
-            discountedBar.querySelector('.poc-visual-percent').textContent = `${discountedPercent.toFixed(1)}%`;
+            discountedBar.querySelector('.poc-visual-percent').textContent = '0%';
+            // Generate discount table
+            generateDiscountTable(originalPrice);
         }
-        // Calculate additional savings scenarios
-        function calculateAdditionalSavings(savings) {
-            if (isNaN(savings)) {
-                monthlySavingsElement.textContent = '--';
-                yearlySavingsElement.textContent = '--';
-                pricePerUnitElement.textContent = '--';
-                return;
-            }
-            // Monthly and yearly savings
-            monthlySavingsElement.textContent = formatCurrency(savings * 1);
-            yearlySavingsElement.textContent = formatCurrency(savings * 12);
-            // Price per unit (assuming 10 units)
-            const originalPrice = parseFloat(originalPriceInput.value);
-            if (!isNaN(originalPrice)) {
-                const discountedPrice = originalPrice - savings;
-                pricePerUnitElement.textContent = `10 for ${formatCurrency(discountedPrice * 10)} (${formatCurrency(discountedPrice)} each)`;
-            } else {
-                pricePerUnitElement.textContent = '--';
-            }
-        }
-        // Generate the discount table
-        function generateDiscountTable(originalPrice) {
-            discountTableBody.innerHTML = '';
-            if (isNaN(originalPrice) || originalPrice <= 0) return;
-            const discountPercentages = [5, 10, 15, 20, 25, 30, 40, 50, 60, 75];
-            discountPercentages.forEach(percent => {
-                const savings = originalPrice * (percent / 100);
-                const finalPrice = originalPrice - savings;
-                const row = document.createElement('tr');
-                const percentCell = document.createElement('td');
-                percentCell.textContent = `${percent}%`;
-                row.appendChild(percentCell);
-                const savingsCell = document.createElement('td');
-                savingsCell.textContent = formatCurrency(savings);
-                row.appendChild(savingsCell);
-                const priceCell = document.createElement('td');
-                priceCell.textContent = formatCurrency(finalPrice);
-                row.appendChild(priceCell);
-                const equivalentCell = document.createElement('td');
-                equivalentCell.textContent = getEquivalentDescription(percent);
-                row.appendChild(equivalentCell);
-                discountTableBody.appendChild(row);
-            });
-        }
-        // Helper function to format currency
-        function formatCurrency(amount) {
-            if (isNaN(amount)) return '--';
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }).format(amount);
-        }
-        // Helper function to get equivalent description
-        function getEquivalentDescription(percent) {
-            if (percent === 5) return "Typical sale";
-            if (percent === 10) return "Common discount";
-            if (percent === 15) return "Student discount";
-            if (percent === 20) return "Seasonal sale";
-            if (percent === 25) return "Quarter off";
-            if (percent === 30) return "Clearance price";
-            if (percent === 40) return "Big discount";
-            if (percent === 50) return "Half price";
-            if (percent === 60) return "Major sale";
-            if (percent === 75) return "Huge discount";
-            return "";
-        }
+    } else {
+        // No original price entered
+        discountedPriceElement.textContent = '--';
+        savingsAmountElement.textContent = '--';
+        effectiveDiscountElement.textContent = '--';
+        // Reset visual comparison
+        originalBar.style.height = '100%';
+        discountedBar.style.height = '100%';
+        originalBar.querySelector('.poc-visual-percent').textContent = '100%';
+        discountedBar.querySelector('.poc-visual-percent').textContent = '0%';
+        // Clear additional savings
+        monthlySavingsElement.textContent = '--';
+        yearlySavingsElement.textContent = '--';
+        pricePerUnitElement.textContent = '--';
+        // Clear discount table
+        discountTableBody.innerHTML = '';
+    }
+}
+// Update the visual comparison bars
+function updateVisualComparison(originalPrice, discountedPrice) {
+    const discountPercent = ((originalPrice - discountedPrice) / originalPrice) * 100;
+    const discountedPercent = 100 - discountPercent;
+    originalBar.style.height = '100%';
+    discountedBar.style.height = `${discountedPercent}%`;
+    originalBar.querySelector('.poc-visual-percent').textContent = '100%';
+    discountedBar.querySelector('.poc-visual-percent').textContent = `${discountedPercent.toFixed(1)}%`;
+}
+// Calculate additional savings scenarios
+function calculateAdditionalSavings(savings) {
+    if (isNaN(savings)) {
+        monthlySavingsElement.textContent = '--';
+        yearlySavingsElement.textContent = '--';
+        pricePerUnitElement.textContent = '--';
+        return;
+    }
+    // Monthly and yearly savings
+    monthlySavingsElement.textContent = formatCurrency(savings * 1);
+    yearlySavingsElement.textContent = formatCurrency(savings * 12);
+    // Price per unit (assuming 10 units)
+    const originalPrice = parseFloat(originalPriceInput.value);
+    if (!isNaN(originalPrice)) {
+        const discountedPrice = originalPrice - savings;
+        pricePerUnitElement.textContent = `10 for ${formatCurrency(discountedPrice * 10)} (${formatCurrency(discountedPrice)} each)`;
+    } else {
+        pricePerUnitElement.textContent = '--';
+    }
+}
+// Generate the discount table
+function generateDiscountTable(originalPrice) {
+    discountTableBody.innerHTML = '';
+    if (isNaN(originalPrice) || originalPrice <= 0) return;
+    const discountPercentages = [5, 10, 15, 20, 25, 30, 40, 50, 60, 75];
+    discountPercentages.forEach(percent => {
+        const savings = originalPrice * (percent / 100);
+        const finalPrice = originalPrice - savings;
+        const row = document.createElement('tr');
+        const percentCell = document.createElement('td');
+        percentCell.textContent = `${percent}%`;
+        row.appendChild(percentCell);
+        const savingsCell = document.createElement('td');
+        savingsCell.textContent = formatCurrency(savings);
+        row.appendChild(savingsCell);
+        const priceCell = document.createElement('td');
+        priceCell.textContent = formatCurrency(finalPrice);
+        row.appendChild(priceCell);
+        const equivalentCell = document.createElement('td');
+        equivalentCell.textContent = getEquivalentDescription(percent);
+        row.appendChild(equivalentCell);
+        discountTableBody.appendChild(row);
+    });
+}
+// Helper function to format currency
+function formatCurrency(amount) {
+    if (isNaN(amount)) return '--';
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    }).format(amount);
+}
+// Helper function to get equivalent description
+function getEquivalentDescription(percent) {
+    if (percent === 5) return "Typical sale";
+    if (percent === 10) return "Common discount";
+    if (percent === 15) return "Student discount";
+    if (percent === 20) return "Seasonal sale";
+    if (percent === 25) return "Quarter off";
+    if (percent === 30) return "Clearance price";
+    if (percent === 40) return "Big discount";
+    if (percent === 50) return "Half price";
+    if (percent === 60) return "Major sale";
+    if (percent === 75) return "Huge discount";
+    return "";
+}
     </script>
     <br>
     <p>The <strong>Percent Off Calculator</strong> is a quick and easy way to find out how much money you save during a sale. Whether you’re shopping online or in-store, this tool helps you figure out the final price after a discount.</p>
