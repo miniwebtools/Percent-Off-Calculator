@@ -1,9 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Percent Off Calculator</title>
+<meta name="description" content="Use the Percent Off Calculator to quickly calculate discount prices. Perfect for shopping, budgeting, and saving money on purchases." />
+  <meta name="keywords" content="Percent Off Calculator, discount calculator, percentage off, price calculator, sale price tool" />
+  <meta name="author" content="Mini Web Tool" />
+  <title>Percent Off Calculator – Instantly Find Discount Prices</title>
     <style>
         /* Modern CSS Reset with Custom Variables */
         :root {
@@ -482,5 +484,44 @@
             return "";
         }
     </script>
+    <br>
+    <p>The <strong>Percent Off Calculator</strong> is a quick and easy way to find out how much money you save during a sale. Whether you’re shopping online or in-store, this tool helps you figure out the final price after a discount.</p>
+
+  <h2>What Does the Percent Off Calculator Do?</h2>
+  <p>This tool helps you calculate how much you save and what the final price is when a product is on sale. Just enter the original price and the discount percentage. The calculator will do the rest!</p>
+
+  <h2>How to Use It</h2>
+  <div class="info-box">
+    <ul>
+      <li>Enter the original price of the item (for example, $80).</li>
+      <li>Enter the percent off (for example, 25%).</li>
+      <li>The tool shows your savings amount and the final price after the discount.</li>
+    </ul>
+  </div>
+
+  <h2>Example Calculation</h2>
+  <p>Let’s say an item costs $120 and the discount is 30% off.</p>
+  <p>30% of $120 is $36. So, the discounted price is $120 - $36 = <strong>$84</strong>.</p>
+
+  <h2>Why Use a Percent Off Calculator?</h2>
+  <ul>
+    <li>Helps you plan your budget before shopping</li>
+    <li>Makes it easy to understand your actual savings</li>
+    <li>Saves time by avoiding manual calculations</li>
+    <li>Useful for comparing deals and prices</li>
+  </ul>
+
+  <h2>Common Discount Scenarios</h2>
+  <p>This calculator is useful for all kinds of sales:</p>
+  <ul>
+    <li>Holiday and Black Friday sales</li>
+    <li>End-of-season clearance deals</li>
+    <li>Online shopping coupon codes</li>
+    <li>Everyday store promotions</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>With the <strong>Percent Off Calculator</strong>, you don’t need to guess how much you’ll save. This tool makes it easy to get the final price and helps you make smarter shopping decisions. Whether you're buying a $10 t-shirt or a $1,000 gadget, this calculator helps you shop with confidence.</p>
+
 </body>
 </html>
